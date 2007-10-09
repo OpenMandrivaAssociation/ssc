@@ -4,7 +4,7 @@
 
 %define _libdir  %_prefix/X11R6/%_lib
 
-Summary: A free OpenGL arcade space shoot-em-up with interesting physics.
+Summary: A free OpenGL arcade space shoot-em-up with interesting physics
 Name: %{name}
 Version: %{version}
 Release: %{release}
