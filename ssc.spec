@@ -17,7 +17,6 @@ Patch1: ssc-0.8-gcc34.diff
 License: GPL
 Group: Games/Arcade
 Url: http://sscx.sourceforge.net/
-BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: freetype2-devel
 BuildRequires: libSDL-devel
 BuildRequires: libSDL_mixer-devel
