@@ -54,14 +54,14 @@ cp %SOURCE3 %buildroot%_miconsdir/%name.png
 cp %SOURCE4 %buildroot%_iconsdir/%name.png
 cp %SOURCE5 %buildroot%_liconsdir/%name.png
 
-cat > %buildroot%_menudir/%name << EOF
-?package(%{name}):\
-        command="%{_gamesbindir}/%{name}"\
-        title="Ssc"\
-        longtitle="Arcade space game"\
-        needs="x11"\
-        section="Amusement/Arcade"\
-        icon="%{name}.png"
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%name.desktop
+[Desktop Entry]
+Type=Application << EOF
+Exec=%{_gamesbindir}/%{name}        
+Name=Ssc        
+Comment=Arcade space game                
+Categories=Game;ArcadeGame;        
+Icon=%{name}
 EOF
 
 %clean
@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README TODO FAQ AUTHORS ChangeLog INSTALL
 %_gamesbindir/%name
 %_gamesdatadir/%name
-%_menudir/%name
+%{_datadir}/applications/mandriva-%name.desktop
 %_miconsdir/%name.png
 %_iconsdir/%name.png
 %_liconsdir/%name.png
