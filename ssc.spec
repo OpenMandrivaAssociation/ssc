@@ -21,7 +21,7 @@ BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: freetype2-devel
 BuildRequires: libSDL-devel
 BuildRequires: libSDL_mixer-devel
-BuildRequires: libMesaGLU-devel
+BuildRequires: mesaglu-devel
 BuildRequires: libpng-devel
 
 
