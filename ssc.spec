@@ -1,6 +1,6 @@
 %define name ssc
 %define version 0.8
-%define release %mkrel 4
+%define release %mkrel 5
 
 %define _libdir  %_prefix/X11R6/%_lib
 
