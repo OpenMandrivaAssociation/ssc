@@ -1,6 +1,6 @@
 %define name ssc
 %define version 0.8
-%define release %mkrel 5
+%define release %mkrel 6
 
 %define _libdir  %_prefix/X11R6/%_lib
 
@@ -14,7 +14,8 @@ Source3:        %{name}-16.png
 Source4:        %{name}-32.png
 Source5:        %{name}-48.png
 Patch1: ssc-0.8-gcc34.diff  
-License: GPL
+Patch2:	ssc-0.8-remove-Werror.patch
+License: GPLv2+
 Group: Games/Arcade
 Url: http://sscx.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -35,6 +36,7 @@ from the game Koules.
 %setup -q
 %patch0 -p0
 %patch1 -p0
+%patch2 -p1
 # Arg hardcore path
 perl -pi -e s!/usr/local/share!%_gamesdatadir! src/audio.cc
 perl -pi -e s!/usr/local/share!%_gamesdatadir! src/menu.cc
@@ -49,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 # Menu and icons
-mkdir -p %buildroot{%_menudir,%_liconsdir,%_iconsdir,%_miconsdir}
+mkdir -p %buildroot{%_menudir,%_liconsdir,%_iconsdir,%_miconsdir,%_datadir/applications}
 
 cp %SOURCE3 %buildroot%_miconsdir/%name.png
 cp %SOURCE4 %buildroot%_iconsdir/%name.png
@@ -57,11 +59,11 @@ cp %SOURCE5 %buildroot%_liconsdir/%name.png
 
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%name.desktop
 [Desktop Entry]
-Type=Application << EOF
-Exec=%{_gamesbindir}/%{name}        
-Name=Ssc        
-Comment=Arcade space game                
-Categories=Game;ArcadeGame;        
+Type=Application
+Exec=%{_gamesbindir}/%{name}
+Name=Ssc
+Comment=Arcade space game
+Categories=Game;ArcadeGame;
 Icon=%{name}
 EOF
 
