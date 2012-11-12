@@ -1,0 +1,13 @@
+Index: ssc-0.8/configure
+===================================================================
+--- ssc-0.8/configure
++++ ssc-0.8/configure	2009-05-16 00:55:57.000000000 +0200
+@@ -4375,7 +4375,7 @@
+ 
+ 
+ DBG_CXXFLAGS="$UNAME_DEFS  -g -Wall -Werror"
+-OPT_CXXFLAGS="$UNAME_DEFS  -O3 -pipe -finline-functions -falign-functions=4 -ffast-math -fno-rtti -fno-exceptions -mfancy-math-387 -fomit-frame-pointer  $CPU_OPTIONS  -Wall -Werror"
++OPT_CXXFLAGS="$UNAME_DEFS  -O3 -pipe -finline-functions -falign-functions=4 -ffast-math -fno-rtti -fno-exceptions -mfancy-math-387 -fomit-frame-pointer  $CPU_OPTIONS  -Wall"
+ PRF_CXXFLAGS="$UNAME_DEFS  -O3 -pipe -finline-functions -falign-functions=4 -mfancy-math-387 -pg $CPU_OPTIONS  -Wall -Werror"
+ 
+ CXXFLAGS=$OPT_CXXFLAGS
