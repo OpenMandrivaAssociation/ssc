@@ -17,7 +17,7 @@ Patch1: ssc-0.8-gcc34.diff
 Patch2:	ssc-0.8-remove-Werror.patch
 License: GPLv2+
 Group: Games/Arcade
-Url: http://sscx.sourceforge.net/
+Url: https://sscx.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: freetype2-devel
 BuildRequires: libSDL-devel
