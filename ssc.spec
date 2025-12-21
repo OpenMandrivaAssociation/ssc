@@ -19,6 +19,11 @@ License: GPLv2+
 Group: Games/Arcade
 Url: https://sscx.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: freetype2-devel
 BuildRequires: libSDL-devel
 BuildRequires: libSDL_mixer-devel
